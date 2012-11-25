@@ -1,0 +1,22 @@
+
+libxzfile To-Do List
+====================
+
+Portability:
+  - Set errno = ENOMEM if malloc() fails?
+
+Bugs:
+  - Should it remember errnum in all situations? CHECK ALL errnum USES!
+  - Maximum buffer size should be at most XZF_OFF_MAX. How to enforce it?
+    Silently use smaller or give an error?
+
+See:
+  - Glibc Notes in freopen(3)
+
+Features:
+  - Thread cancellation support
+  - Function to create a temp file
+  - perror-like with printf format
+  - Store extra data in streams. Maybe implement fileno() this way?
+  - Should the offset be cached for fast seeking and fast retrieval of
+    the current offset, or should it always lead to backend seek call?
